@@ -1,6 +1,4 @@
 fn main() {
-    println!("Hello, world!");
-
     let _score: i32 = 10;
     let mut lives: u8 = 3;
 

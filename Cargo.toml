@@ -1,3 +1,6 @@
 [workspace]
 members = ["exercises/ex01-variables", "exercises/ex02-types", "exercises/ex03-ownership", "exercises/ex04-structs"]
 resolver = "2"
+
+[workspace.dependencies]
+assert_cmd = "2"
