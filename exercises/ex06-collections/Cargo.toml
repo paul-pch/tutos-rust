@@ -1,0 +1,9 @@
+[package]
+name = "ex06-collections"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[dev-dependencies]
+assert_cmd = { workspace = true }

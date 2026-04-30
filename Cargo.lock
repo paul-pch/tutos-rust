@@ -76,6 +76,41 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex06-collections"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
+name = "ex07-error-handling"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
+name = "ex08-error-customs"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
+name = "ex09-traits"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
+name = "ex10-lifetimes"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.186"
 source = "registry+https://github.com/rust-lang/crates.io-index"
