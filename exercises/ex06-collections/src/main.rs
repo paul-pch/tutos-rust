@@ -36,27 +36,19 @@ fn main() {
     let mut total_value: u32 = 0;
 
     println!("=== Inventaire ===");
-    let mut inventaire: Vec<Item> = Vec::new();
-    inventaire.push(Item::new(String::from("Épée de fer"), Rarity::Common, 10));
-    inventaire.push(Item::new(String::from("Potion de soin"), Rarity::Common, 5));
-    inventaire.push(Item::new(
-        String::from("Bouclier d'acier"),
-        Rarity::Rare,
-        50,
-    ));
-    inventaire.push(Item::new(
-        String::from("Amulette dragon"),
-        Rarity::Legendary,
-        500,
-    ));
+    let inventaire: Vec<Item> = vec![
+        Item::new(String::from("Épée de fer"), Rarity::Common, 10),
+        Item::new(String::from("Potion de soin"), Rarity::Common, 5),
+        Item::new(String::from("Bouclier d'acier"), Rarity::Rare, 50),
+        Item::new(String::from("Amulette dragon"), Rarity::Legendary, 500),
+    ];
 
     for item in inventaire.iter() {
         println!("{}", item.display());
         total_value += item.value;
     }
 
-    println!("");
-    println!("=== Par catégorie ===");
+    println!("\n=== Par catégorie ===");
     let mut par_categorie: HashMap<String, Vec<Item>> = HashMap::new();
     par_categorie.insert(String::from("Armes"), vec![inventaire[0].clone()]);
     par_categorie.insert(String::from("Armures"), vec![inventaire[2].clone()]);
@@ -92,6 +84,5 @@ fn main() {
         }
     }
 
-    println!("");
-    println!("Valeur totale de l'inventaire : {} gold", total_value);
+    println!("\nValeur totale de l'inventaire : {} gold", total_value);
 }
