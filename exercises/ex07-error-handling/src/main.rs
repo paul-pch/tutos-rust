@@ -15,7 +15,10 @@ fn main() {
         }
 
         fn display(&self) {
-            println!("- {} | {}kg | {} gold", self.name, self.weight, self.value);
+            println!(
+                "- {} | {:.1}kg | {} gold",
+                self.name, self.weight, self.value
+            );
         }
     }
 
@@ -33,7 +36,9 @@ fn main() {
         Ok(items)
     }
 
-    match load_items("exercises/ex07-error-handling/items.csv") {
+    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/items.csv");
+
+    match load_items(path) {
         Ok(items) => {
             println!("Loaded {} items:", items.len());
             for item in items {
