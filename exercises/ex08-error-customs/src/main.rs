@@ -1,4 +1,4 @@
-use std::fmt::{self, write};
+use std::fmt::{self};
 
 fn main() {
     #[derive(Debug)]
@@ -42,10 +42,17 @@ fn main() {
 
     fn load_items(path: &str) -> Result<Vec<Item>, Box<dyn std::error::Error>> {
         let mut items: Vec<Item> = Vec::new();
-        let content = std::fs::read_to_string(path)
-            .map_err(|e| ParseError::InvalidFormat((e.to_string())))?;
+
+        let content =
+            std::fs::read_to_string(path).map_err(|e| ParseError::InvalidFormat(e.to_string()))?;
+
         for line in content.lines() {
             let parts: Vec<&str> = line.split(",").collect();
+
+            if parts.len() != 3 {
+                return Err(ParseError::InvalidFormat(line.to_string()).into());
+            }
+
             items.push(Item::new(
                 parts[0].to_string(),
                 parts[1]
@@ -56,6 +63,7 @@ fn main() {
                     .map_err(|e| ParseError::InvalidNumber(e.to_string()))?,
             ));
         }
+
         Ok(items)
     }
 
