@@ -14,14 +14,18 @@ Je suis ingénieur DevOps, grand débutant en Rust. Je suis une série d'exercic
 | 04 | ex04-structs | struct, impl, `&self`, `&mut self`, méthodes associées |
 | 05 | ex05-enums | enums, pattern matching, `match` |
 | 06 | ex06-collections | `Vec`, `HashMap`, itération |
+| 07 | ex07-error-handling | `Result`, `Option`, `?`, `match` sur erreurs |
+| 08 | ex08-error-customs | enums d'erreurs custom, `impl std::error::Error` |
+| 09 | ex09-traits | `trait`, `impl Trait for T`, `Display`, trait objects |
+| 10 | ex10-lifetimes | annotations `'a`, structs avec références, `longest` |
+| 11 | ex11-shop | iterateurs & closures (`map`, `filter`, `sum`, `max_by_key`, `position`), exercice d'intégration |
 
 ## Prochains concepts suggérés
 
-- **Closures** — fonctions anonymes, capture de l'environnement, `Fn` / `FnMut` / `FnOnce`
-- **Iterators** — `map`, `filter`, `fold`, chaîner des opérations sur des collections
 - **Generics** — paramétrer structs et fonctions par des types, contraintes avec `where`
 - **Modules & visibilité** — organiser son code avec `mod`, `pub`, `use`
 - **Smart pointers** — `Box<T>`, `Rc<T>`, `RefCell<T>` — aller plus loin sur la gestion mémoire
+- **Concurrence** — `thread::spawn`, `Arc<Mutex<T>>`, channels
 
 ## Règles de format du README
 
@@ -36,7 +40,8 @@ Je suis ingénieur DevOps, grand débutant en Rust. Je suis une série d'exercic
 
 ## Règles pédagogiques
 
-- Un seul concept principal par exercice
+- Un seul concept principal par exercice (sauf exercices d'intégration explicitement marqués comme tels)
+- Les exercices d'intégration mobilisent plusieurs concepts acquis autour d'un fil directeur unique — ils sont plus longs et produisent plus de code
 - S'appuyer sur les notions déjà vues sans les ré-expliquer
 - Le compilateur Rust est un bon professeur : les exercices peuvent volontairement pousser à faire des erreurs de compilation instructives
 - Pas de code fourni dans la consigne — l'apprenant écrit tout
