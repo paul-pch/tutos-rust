@@ -69,15 +69,17 @@ lint: fmt clippy ## fmt + clippy
 # ── exercices ──────────────────────────────────────────────────────────────────
 
 .PHONY: new
-new: ## Crée un exercice  —  make new name=ex05-foo
-	@test -n "$(name)" || $(call err,précise un nom : make new name=ex05-foo)
-	@cargo new --vcs none exercises/$(name)
+new: ## Crée un exercice  —  make new name=ex12-foo phase=phase2
+	@test -n "$(name)"  || $(call err,précise un nom : make new name=ex12-foo phase=phase2)
+	@test -n "$(phase)" || $(call err,précise une phase : make new name=ex12-foo phase=phase2)
+	@mkdir -p exercises/$(phase)
+	@cargo new --vcs none exercises/$(phase)/$(name)
 	@printf '\n[dev-dependencies]\nassert_cmd = { workspace = true }\n' \
-		>> exercises/$(name)/Cargo.toml
-	@mkdir -p exercises/$(name)/tests
+		>> exercises/$(phase)/$(name)/Cargo.toml
+	@mkdir -p exercises/$(phase)/$(name)/tests
 	@printf 'use assert_cmd::Command;\n\n#[test]\nfn test_output() {\n    Command::cargo_bin("$(name)")\n        .unwrap()\n        .assert()\n        .success()\n        .stdout("");\n}\n' \
-		> exercises/$(name)/tests/output.rs
-	@$(call ok,exercice exercises/$(name) créé)
+		> exercises/$(phase)/$(name)/tests/output.rs
+	@$(call ok,exercice exercises/$(phase)/$(name) créé)
 
 # ── utilitaires ────────────────────────────────────────────────────────────────
 

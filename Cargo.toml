@@ -1,5 +1,8 @@
 [workspace]
-members = ["exercises/ex01-variables", "exercises/ex02-types", "exercises/ex03-ownership", "exercises/ex04-structs", "exercises/ex05-enums", "exercises/ex06-collections", "exercises/ex07-error-handling", "exercises/ex08-error-customs", "exercises/ex09-traits", "exercises/ex10-lifetimes", "exercises/ex11-shop"]
+members = [
+    "exercises/phase1/*",
+    # "exercises/phase2/*",
+]
 resolver = "2"
 
 [workspace.dependencies]
