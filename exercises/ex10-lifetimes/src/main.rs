@@ -1,4 +1,3 @@
-
 fn longest_name<'a>(a: &'a str, b: &'a str) -> &'a str {
     if a.len() > b.len() { a } else { b }
 }
@@ -9,7 +8,7 @@ struct Item {
 
 struct InventoryRef<'a> {
     name: &'a str,
-    inventaire: Vec<Item>
+    inventaire: Vec<Item>,
 }
 
 impl InventoryRef<'_> {
@@ -20,15 +19,18 @@ impl InventoryRef<'_> {
 
 fn main() {
     let category = String::from("Weapons");
-    
     // drop(category);
 
-    let inventory_ref = InventoryRef { 
+    let inventory_ref = InventoryRef {
         name: &category,
         inventaire: vec![
-            Item { name: String::from("Greatsword")},
-            Item { name: String::from("Sword")}
-        ]
+            Item {
+                name: String::from("Greatsword"),
+            },
+            Item {
+                name: String::from("Sword"),
+            },
+        ],
     };
 
     let mut plus_long = "";
@@ -36,8 +38,7 @@ fn main() {
     for item in inventory_ref.inventaire.iter() {
         plus_long = longest_name(plus_long, &item.name);
     }
-    
+
     println!("Longest: {}", plus_long);
     inventory_ref.describe();
-
 }
