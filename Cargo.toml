@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "exercises/phase1/*", "exercises/phase2/ex12-generics",
+    "exercises/phase1/*", "exercises/phase2/ex12-generics", "exercises/phase2/ex13-modules",
     # "exercises/phase2/*",
 ]
 resolver = "2"

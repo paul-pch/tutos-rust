@@ -30,7 +30,7 @@ Je suis ingénieur DevOps, grand débutant en Rust. Je suis une série d'exercic
 | 16 | ex16-integration | exercice d'intégration phase 2 |
 
 ## Règles de format du README
-- Une section **Concept** avec les notions théoriques et des exemples de code commentés
+- Une section **Concept** avec les notions théoriques et des exemples de code commentés. Elle doit inclure, quand c'est pertinent : les niveaux ou variantes du mécanisme (ex. `pub` / `pub(crate)` / privé), les bonnes pratiques associées (pourquoi préférer tel pattern), et les pièges courants (ex. une struct privée rend ses champs `pub` inaccessibles)
 - Une section **Exercice** avec des étapes numérotées claires
 - Une section **Output attendu** avec le résultat exact à reproduire
 - Une section **Pistes** avec des hints sans donner la solution
