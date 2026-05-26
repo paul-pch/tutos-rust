@@ -1,0 +1,9 @@
+[package]
+name = "ex14-box"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
