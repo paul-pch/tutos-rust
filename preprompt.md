@@ -49,26 +49,31 @@ Je suis ingénieur DevOps, grand débutant en Rust. Je suis une série d'exercic
 - Pas de code fourni dans la consigne — l'apprenant écrit tout
 - Le code final doit compiler sans warnings — toute fonction, struct ou variable définie dans l'exercice doit être utilisée quelque part
 
-## Correction d'un exercice
+## Relecture / Correction d'un exercice
 
-Quand l'apprenant demande une correction, analyser le code et regrouper les points par catégorie, dans cet ordre de priorité :
+Quand l'apprenant soumet sa solution (qu'il demande une "relecture" ou une "correction"), l'analyser comme un instructeur expert Rust.
 
-1. **Bugs** — logique incorrecte, output attendu non respecté (ex. `<=` au lieu de `>`, copier-coller fautif dans un message d'erreur)
+**Règle fondamentale : jamais de code solution.** L'apprenant doit trouver la correction seul. Présenter les problèmes clairement, expliquer *pourquoi* c'est un problème, indiquer où chercher — sans écrire le fix.
+
+Regrouper les points par catégorie, dans cet ordre de priorité :
+
+1. **Bugs** — logique incorrecte, output attendu non respecté (ex. `<=` au lieu de `>`, copier-coller fautif)
 2. **Types** — types sémantiquement faux (ex. `i64` pour de la mémoire qui ne peut pas être négative → `u64`)
 3. **Nommage** — typos dans les identifiants (`Measurment`, `thresold`…)
 4. **Style idiomatique** — écarts avec les patterns Rust standards :
    - `iter().count()` → `.len()` quand la collection l'expose
-   - ignorer un constructeur qu'on vient de définir et construire la struct directement
+   - ignorer un constructeur défini et construire la struct directement
    - imports inutiles (`use std::vec` alors que `vec![]` est dans le prelude)
    - nombres magiques sans underscores (`8589934592` → `8_589_934_592`)
-   - format spec sans effet (`{:.2}` sur un type `Display` custom qui n'en tient pas compte)
+   - format spec sans effet (`{:.2}` sur un type `Display` custom)
 5. **Formatage** — cohérence des espacements, conventions `where`/`impl`
 
 Règles de présentation :
 - Pointer le numéro de ligne exact
-- Montrer uniquement le diff nécessaire, pas une réécriture complète
-- Distinguer **bloquant** (casse l'output ou la sémantique) de **style** (non bloquant)
+- Distinguer **bloquant** (casse la compilation ou l'output attendu) de **style** (non bloquant)
 - Maximum 10 points pour ne pas noyer l'apprenant
+
+**Persistance du feedback** : chaque relecture/correction doit être enregistrée dans un fichier `CORRECTION.md` à la racine du package de l'exercice (`exercises/<phase>/<nom-exercice>/CORRECTION.md`). Ce fichier contient l'analyse complète pour que l'apprenant puisse la relire sans repasser par une conversation.
 
 ## Création d'un exercice
 Pour chaque nouvel exercice, quatre actions uniquement :
