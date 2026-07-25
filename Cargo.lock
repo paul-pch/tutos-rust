@@ -139,6 +139,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex15-rc-refcell"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
+name = "ex16-integration"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.186"
 source = "registry+https://github.com/rust-lang/crates.io-index"
